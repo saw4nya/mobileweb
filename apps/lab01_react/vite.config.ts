@@ -8,7 +8,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './mobileweb/lab01_react/',
+  base: '/mobileweb/lab01_react/',
   plugins: [
     react(),
     legacy()
