@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKU Campus Guide — แนะนำสถานที่ภายในมหาวิทยาลัยขอนแก่น</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ------------------------------
+       RESET + BOX MODEL
+    --------------------------------*/
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Kanit", sans-serif;
+            line-height: 1.7;
+            color: #222;
+            background: #f5f7fb;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ------------------------------
+       LAYOUT & GLOBAL
+    --------------------------------*/
+        header {
+            background: linear-gradient(135deg, #7b2819, #A73B24);
+            color: #fff;
+            padding: 1.5rem 1rem 2rem;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.9rem;
+            letter-spacing: 0.04em;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .student-info {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        /* TODO: แก้ไขรหัส / ชื่อ ให้เป็นของตนเองก่อนส่ง */
+        .student-id {
+            font-weight: 600;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            backdrop-filter: blur(4px);
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.28);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+            transform: translateY(-1px);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem 3rem;
+            background-image: url(/mobileweb/docs/assets/background.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .intro {
+            background: #ffffff;
+            padding: 1.25rem 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(15, 35, 60, 0.08);
+            border: 1px solid #e0e6f3;
+        }
+
+        .intro h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            color: #A73B24;
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            color: #555;
+            margin-top: 0.25rem;
+        }
+
+        /* ------------------------------
+       PLACE CARDS
+    --------------------------------*/
+        .places {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        article.place {
+            background: #ffffff;
+            border-radius: 1.1rem;
+            padding: 1.25rem 1.5rem 1.5rem;
+            box-shadow: 0 10px 22px rgba(15, 35, 60, 0.09);
+            border: 1px solid #dde3f3;
+        }
+
+        article.place header {
+            position: static;
+            padding: 0;
+            background: transparent;
+            color: inherit;
+        }
+
+        .place-title {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .place-title h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            color: #A73B24;
+        }
+
+        .place-tag {
+            font-size: 0.8rem;
+            padding: 0.1rem 0.5rem;
+            border-radius: 999px;
+            border: 1px solid #c2d2f5;
+            background: #fde0d8;
+            color: #7b2819;
+        }
+
+        .place-meta {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.7rem;
+        }
+
+        .place-body {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+            gap: 1rem 1.5rem;
+            align-items: flex-start;
+        }
+
+        .place-description p {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            text-align: justify;
+        }
+
+        .place-description ul {
+            margin-top: 0.3rem;
+            padding-left: 1.2rem;
+            font-size: 0.93rem;
+            color: #555;
+        }
+
+        .label {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.5rem;
+            background: #fbe3da;
+            color: #A73B24;
+            margin-bottom: 0.25rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.6rem;
+        }
+
+        figure {
+            margin: 0;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid #dde3f3;
+            background: #f9fbff;
+            box-shadow: 0 4px 10px rgba(8, 31, 54, 0.08);
+        }
+
+        figure img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        figure figcaption {
+            font-size: 0.8rem;
+            padding: 0.35rem 0.55rem 0.5rem;
+            color: #444;
+        }
+
+        /* ------------------------------
+       FOOTER
+    --------------------------------*/
+        footer {
+            background: #5b1f12;
+            color: #ffece4;
+            padding: 1.3rem 1rem 1.6rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .footer-inner a {
+            color: #ffeb3b;
+        }
+
+        /* ------------------------------
+       MEDIA QUERY (RESPONSIVE)
+    --------------------------------*/
+        @media (max-width: 768px) {
+            header {
+                padding-bottom: 1.5rem;
+            }
+
+            header h1 {
+                font-size: 1.4rem;
+            }
+
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .intro {
+                padding: 1rem 1rem;
+            }
+
+            .place-body {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            article.place {
+                padding: 1rem 0.9rem 1.1rem;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/mobileweb/docs/index.html" class="home-button">กลับไปหน้าแรก</a>
+
+        <div class="header-inner">
+
+            <!-- กลุ่มโลโก้ + ข้อความ -->
+            <div class="brand">
+                <!-- Canvas Logo -->
+                <canvas id="logoCanvas" width="80" height="80"></canvas>
+
+                <div class="brand-text">
+                    <h1>KKU Campus Guide</h1>
+                    <p>แนะนำสถานที่ภายในมหาวิทยาลัยขอนแก่น</p>
+
+                    <div class="student-info">
+                        <span class="student-id">รหัสนักศึกษา: 663380238-0 </span> |
+                        <span>ชื่อ-สกุล: นางสาวศวรรยา ศิริมูล</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- LOGO ANIMATION SCRIPT -->
+        <script>
+            const canvas = document.getElementById("logoCanvas");
+            const ctx = canvas.getContext("2d");
+
+            let angle = 0;
+            let radius = 25;
+
+            function drawLogo() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // วงกลมพื้นหลัง
+                ctx.beginPath();
+                ctx.arc(40, 40, 35, 0, Math.PI * 2);
+                ctx.fillStyle = "#A73B24";
+                ctx.fill();
+
+                // วงกลมเล็กหมุนรอบ
+                const x = 40 + radius * Math.cos(angle);
+                const y = 40 + radius * Math.sin(angle);
+
+                ctx.beginPath();
+                ctx.arc(x, y, 8, 0, Math.PI * 2);
+                ctx.fillStyle = "#ffffff";
+                ctx.fill();
+
+                // ตัวอักษร KKU
+                ctx.font = "bold 18px Kanit";
+                ctx.fillStyle = "#fff";
+                ctx.textAlign = "center";
+                ctx.fillText("KKU", 40, 45);
+
+                angle += 0.05;   // ความเร็วหมุน
+            }
+
+            function animate() {
+                drawLogo();
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        </script>
+
+        <style>
+            /* โลโก้ + layout เบื้องต้น */
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .home-button {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                background: rgba(255, 255, 255, 0.25);
+                backdrop-filter: blur(4px);
+                padding: 8px 14px;
+                border-radius: 8px;
+                color: #fff;
+                font-weight: 600;
+                text-decoration: none;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                transition: 0.2s;
+            }
+
+            .home-button:hover {
+                background: rgba(255, 255, 255, 0.4);
+                transform: translateY(-2px);
+            }
+
+            #logoCanvas {
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+            }
+
+            header {
+                /* background: linear-gradient(135deg, #7b2819, #A73B24); */
+                background-image: url(/mobileweb/docs/assets/background1.jpg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: #fff;
+                padding: 1.5rem 1rem 2rem;
+            }
+
+            .header-inner {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                max-width: 1100px;
+                margin: auto;
+            }
+
+            .student-info {
+                font-size: 0.9rem;
+                opacity: 0.95;
+            }
+
+            .student-id {
+                font-weight: 600;
+            }
+        </style>
+    </header>
+
+
+    <main>
+        <section class="intro" aria-labelledby="intro-title">
+            <h2 id="intro-title">ยินดีต้อนรับสู่ มข.</h2>
+            <p>
+                มหาวิทยาลัยขอนแก่น (Khon Kaen University) เป็นมหาวิทยาลัยเก่าแก่ในภาคตะวันออกเฉียงเหนือ
+                ที่มีพื้นที่กว้างขวาง เต็มไปด้วยอาคารเรียน แหล่งเรียนรู้ สวน และพื้นที่พักผ่อนจำนวนมาก
+                หน้านี้จะพาไปรู้จักสถานที่สำคัญภายใน มข. อย่างน้อย 4 แห่ง
+                ที่ทั้งสวยงามและมีประโยชน์ต่อการใช้ชีวิตในรั้วมหาวิทยาลัย
+            </p>
+        </section>
+
+        <section class="places" aria-label="สถานที่แนะนำภายในมหาวิทยาลัยขอนแก่น">
+
+            <!-- สถานที่ 1 -->
+            <article class="place" id="golden-jubilee">
+                <header>
+                    <div class="place-title">
+                        <h3>ศูนย์ประชุมกาญจนาภิเษก</h3>
+                        <span class="place-tag">แลนด์มาร์ก มข.</span>
+                    </div>
+                    <p class="place-meta">ตั้งอยู่ใกล้ประตูงามวงศ์วาน มีลานกว้างไว้จัดกิจกรรมขนาดใหญ่</p>
+                </header>
+
+                <div class="place-body">
+                    <div class="place-description">
+                        <span class="label">เกี่ยวกับสถานที่</span>
+                        <p>
+                            ศูนย์ประชุมกาญจนาภิเษกเป็นอาคารจัดประชุมและงานสำคัญของมหาวิทยาลัย
+                            เช่น พิธีพระราชทานปริญญาบัตร งานวิชาการระดับชาติ และงานแสดงต่าง ๆ
+                            ด้านหน้ามีลานกว้างและสนามหญ้า เหมาะสำหรับถ่ายรูปที่ระลึกและจัดกิจกรรมนักศึกษา
+                        </p>
+                        <ul>
+                            <li>ใช้จัดงานสำคัญระดับมหาวิทยาลัย</li>
+                            <li>เป็นมุมยอดนิยมสำหรับถ่ายรูปบัณฑิตและเพื่อน ๆ</li>
+                            <li>มีลานกว้างเหมาะสำหรับงานคอนเสิร์ตหรือกิจกรรมชมรม</li>
+                        </ul>
+                    </div>
+
+                    <div class="gallery" aria-label="ภาพประกอบศูนย์ประชุมกาญจนาภิเษก">
+                        <figure>
+                            <img src="https://asset.kku.ac.th/wp-content/uploads/2025/02/2025-02-04_08-51-31_488661.png"
+                                alt="บรรยากาศอาคารจัดประชุมขนาดใหญ่">
+                            <figcaption>อาคารศูนย์ประชุมขนาดใหญ่ รองรับผู้เข้าร่วมได้จำนวนมาก</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://asset.kku.ac.th/wp-content/uploads/2025/02/2025-02-04_08-51-17_428061-scaled.jpg"
+                                alt="ภายในหอประชุมมีผู้เข้าร่วมงานจำนวนมาก">
+                            <figcaption>ภายในหอประชุม ใช้จัดงานวิชาการและพิธีการต่าง ๆ ของมหาวิทยาลัย</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </article>
+
+            <!-- สถานที่ 2 -->
+            <article class="place" id="central-library">
+                <header>
+                    <div class="place-title">
+                        <h3>สวนเกษตร</h3>
+                        <span class="place-tag">แหล่งพักผ่อน</span>
+                    </div>
+                    <p class="place-meta">พื้นที่สีเขียวให้นักศึกษาเที่ยวเล่นพักผ่อน</p>
+                </header>
+
+                <div class="place-body">
+                    <div class="place-description">
+                        <span class="label">เกี่ยวกับสถานที่</span>
+                        <p>
+                            สวนเกษตร มข. เป็นพื้นที่สีเขียวของคณะเกษตรศาสตร์ ที่รวมทั้งแปลงสาธิตการปลูกพืช
+                            พื้นที่สำหรับทำกิจกรรม และตลาดช่วงเย็น เหมาะสำหรับเดินเล่น ชมสวน และหาอาหารอร่อยราคาเป็นมิตร
+                        </p>
+                        <ul>
+                            <li>มีแปลงดอกไม้ / แปลงผักตามโครงการ Smart Flower Farm และงานวิจัยด้านเกษตรอัจฉริยะ </li>
+                            <li>บ่าย–เย็นมีร้านอาหาร/ของว่างให้เลือกหลากหลาย</li>
+                            <li>เป็นจุดรวมตัวพบปะ หรือเดินเล่นถ่ายรูปในสวน</li>
+                        </ul>
+                    </div>
+
+                    <div class="gallery" aria-label="ภาพประกอบสำนักหอสมุด มข.">
+                        <figure>
+                            <img src="https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/499930253_1241228384463933_5576393451541799823_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=7vBaypCuGVEQ7kNvwEzEAs7&_nc_oc=Adnw_uyXRG8qGHrqrwTmWXnhuMo2Bbv9AwsyPLCZBlGVeEezSa4Z-SLruFnxqc-E4E0&_nc_zt=23&_nc_ht=scontent-bkk1-2.xx&_nc_gid=Ri3DFShMg-EV2tDMY6j0Eg&oh=00_Afj6p3-he9XNkYs2g4UwEe6BX09q-DiElNd92FevyT6EsQ&oe=69332387"
+                                alt="ภายในห้องสมุดที่เต็มไปด้วยหนังสือบนชั้น">
+                            <figcaption>บ่าย–เย็นมีร้านอาหาร/ของว่างให้เลือกหลากหลาย</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.kku.ac.th/wp-content/uploads/2023/12/IMG_0832-scaled.jpg"
+                                alt="นักศึกษากำลังอ่านหนังสือและทำงานกลุ่มภายในห้องสมุด">
+                            <figcaption>มีแปลงดอกไม้/แปลงผักตามโครงการ Smart Flower Farm และงานวิจัยด้านเกษตรอัจฉริยะ</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </article>
+
+            <!-- สถานที่ 3 -->
+            <article class="place" id="complex">
+                <header>
+                    <div class="place-title">
+                        <h3>บึงสีฐาน</h3>
+                        <span class="place-tag">แหล่งพักผ่อน</span>
+                    </div>
+                    <p class="place-meta">บึงน้ำขนาดใหญ่สำคัญของ มข. อยู่โซนประตูสีฐาน/ใกล้ศูนย์ประชุมกาญจนาภิเษก</p>
+                </header>
+
+                <div class="place-body">
+                    <div class="place-description">
+                        <span class="label">เกี่ยวกับสถานที่</span>
+                        <p>
+                            บึงสีฐานเป็นแหล่งพักผ่อนยอดนิยมของชาว มข. และชาวขอนแก่น บรรยากาศริมบึงลมพัดเย็น
+                            เหมาะสำหรับวิ่ง ออกกำลังกาย ปั่นจักรยาน หรือนั่งชมพระอาทิตย์ตกยามเย็น
+                        </p>
+                        <ul>
+                            <li>จุดออกกำลังกายยอดนิยม มีลู่วิ่ง / ทางเดินริมบึง</li>
+                            <li>โลเคชันจัดงาน “สีฐานเฟสติวัล” และกิจกรรมเทศกาลต่าง ๆ</li>
+                            <li>บรรยากาศดี เหมาะถ่ายรูปและนั่งชิลหลังเลิกเรียน</li>
+                        </ul>
+                    </div>
+
+                    <div class="gallery" aria-label="ภาพประกอบอาคารเรียนรวมคอมเพล็กซ์">
+                        <figure>
+                            <img src="https://scontent-bkk1-1.xx.fbcdn.net/v/t1.6435-9/128428428_3307654149339666_6182460962715250350_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=IBcSLCyp7RwQ7kNvwE0dPSZ&_nc_oc=Adn0TTAQBtLQtgYjctBR2_vqmlDmahqtKScxkls9ulpt0BcXrHGyKNKWSr39_-5NcO0&_nc_zt=23&_nc_ht=scontent-bkk1-1.xx&_nc_gid=PWnHIrcVv8mzFICExIulUg&oh=00_AfixmUvF8osj0m2o_LdbOikT0Rkd3sOd1XhgnHNjBQaRQg&oe=6954E586"
+                                alt="ด้านหน้าของอาคารเรียนที่ทันสมัย">
+                            <figcaption>บรรยากาศดี เหมาะถ่ายรูปและนั่งชิลหลังเลิกเรียน</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://cms.dmpcdn.com/ugcarticle/2020/02/03/ddcac7b0-1658-11ec-bf85-1bca4c7f474f_original.jpg"
+                                alt="ห้องเรียนที่มีโปรเจกเตอร์และโต๊ะเก้าอี้เรียงเป็นระเบียบ">
+                            <figcaption>จุดออกกำลังกายยอดนิยม มีลู่วิ่ง/ทางเดินริมบึง
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </article>
+
+            <!-- สถานที่ 4 -->
+            <article class="place" id="cultural-center">
+                <header>
+                    <div class="place-title">
+                        <h3>หอศิลป์และวัฒนธรรม มข.</h3>
+                        <span class="place-tag">ศิลปะ & วัฒนธรรม</span>
+                    </div>
+                    <p class="place-meta">พื้นที่จัดแสดงนิทรรศการศิลปะและกิจกรรมทางวัฒนธรรมของมหาวิทยาลัย</p>
+                </header>
+
+                <div class="place-body">
+                    <div class="place-description">
+                        <span class="label">เกี่ยวกับสถานที่</span>
+                        <p>
+                            หอศิลป์และวัฒนธรรม มข. เป็นสถานที่แสดงผลงานศิลปะของนักศึกษา ศิลปินในท้องถิ่น
+                            และศิลปินระดับชาติ อีกทั้งยังใช้เป็นพื้นที่จัดกิจกรรมด้านศิลปะ การแสดง และวัฒนธรรม
+                            เหมาะสำหรับคนที่สนใจสายครีเอทีฟและอยากเปิดมุมมองใหม่ ๆ
+                        </p>
+                        <ul>
+                            <li>มีนิทรรศการหมุนเวียนตลอดปี</li>
+                            <li>เหมาะสำหรับมาชมงานศิลป์หรือถ่ายรูปสวย ๆ</li>
+                            <li>บางช่วงมีกิจกรรมเวิร์กช็อปให้เข้าร่วมฟรีหรือเสียค่าใช้จ่ายเล็กน้อย</li>
+                        </ul>
+                    </div>
+
+                    <div class="gallery" aria-label="ภาพประกอบหอศิลป์และวัฒนธรรม">
+                        <figure>
+                            <img src="https://cac.kku.ac.th/wp-content/uploads/2021/05/MDL01816-scaled-e1626802717621.jpg"
+                                alt="ห้องจัดแสดงภาพวาดในแกลเลอรี">
+                            <figcaption>ห้องจัดแสดงผลงานศิลปะในบรรยากาศเงียบสงบ</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://ak-d.tripcdn.com/images/1mi5q2224v9xtqf4wE954_W_640_0_R5_Q80.jpg?proc=source/trip"
+                                alt="กลุ่มคนกำลังดูงานศิลปะภายในหอศิลป์">
+                            <figcaption>นักศึกษาและผู้สนใจเยี่ยมชมนิทรรศการศิลปะที่จัดขึ้นเป็นระยะ</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div>
+                © 2025 KKU Campus Guide
+            </div>
+            <div>
+                นางสาวศวรรยา ศิริมูล รหัสนักศึกษา 663380238-0
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
