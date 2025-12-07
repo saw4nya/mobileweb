@@ -75,10 +75,20 @@
         background-color: #DDF5F7;
         color: #3B577D;
         font-weight: 600;
+        border: 2.5px solid #A0CADD;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+      .btn:active {
+        background-color: #DDF5F7;
+        color: #3B577D;
+        font-weight: 600;
         border: 2px solid #A0CADD;
         border-radius: 8px;
         margin-right: 10px;
     }
+
 
     /* .window {
         margin: auto;
@@ -111,84 +121,100 @@
     #close:active {
         animation: shake 0.4s ease;
     }
+
+    .week-title {
+        font-weight: 700;
+        color: #3B577D;
+        min-height: 3.5rem;
+
+    }
 </style>
 
 <body>
     <!-- <div class="window"> -->
-        <!-- <div class="title-bar">
+    <!-- <div class="title-bar">
             <span id="title">saw☆nya</span>
             <span id="close"> [✕] </span>
         </div> -->
-        <header class="text-center">
-            <div class="title-bar">
-                <span id="title">intro</span>
-                <span id="close"> [✕] </span>
-            </div>
-            <br>
-            <h3 style="font-weight: 700; color: #3B577D;">รายวิชา Mobile Web Application Development</h3>
-            <p style="font-weight: 400; color: #386d86;">ภาคการศึกษา 2/2568</p>
-            <p>
-            <div style="color: #3B577D;">
-                <strong>ชื่อ-สกุล นักศึกษา: นางสาวศวรรยา ศิริมูล</strong>
+    <header class="text-center">
+        <div class="title-bar">
+            <span id="title">intro</span>
+            <span id="close"> [✕] </span>
+        </div>
+        <br>
+        <h3 style="font-weight: 700; color: #3B577D;">รายวิชา Mobile Web Application Development</h3>
+        <p style="font-weight: 400; color: #386d86;">ภาคการศึกษา 2/2568</p>
+        <p>
+        <div style="color: #3B577D;">
+            <strong>ชื่อ-สกุล นักศึกษา: นางสาวศวรรยา ศิริมูล</strong>
             </p>
             <p>
                 <strong>รหัสนักศึกษา: 663380238-0 </strong>
             </p>
-            </div>
-            <br>
-        </header>
-        <main class="main-wrapper container mt-4">
-            <h4 class="mb-4 ">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
-            <div class="row g-4">
-                <!-- Week 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="week-title">
-                                Week 1: การเตรียม Workspace
-                            </h5>
-                            <p>
-                                ติดตั้งเครื่องมือที่จำเป็นสำหรับฝึกปฏิบัติการในรายวิชา
-                                ทดลองสร้าง ionic-vue และ ionic-project
-                            </p>
-                            <a href="lab01_vue/index.html" class="btn  mb-2" target="_blank">Lab01_Vue</a>
+        </div>
+        <br>
+    </header>
+    <main class="main-wrapper container mt-4">
+        <h4 class="mb-4 ">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
+        <div class="row g-4">
+            <!-- Week 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="week-title">
+                            Week 1: การเตรียม Workspace
+                        </h5>
+                        <p class="week-desc">
+                            ติดตั้งเครื่องมือที่จำเป็นสำหรับฝึกปฏิบัติการในรายวิชา
+                            ทดลองสร้าง ionic-vue และ ionic-project
+                        </p>
+                        <div class="mt-2 mb-2">
+                            <a href="lab01_vue/index.html" class="btn mb-2" target="_blank">Lab01_Vue</a>
                             <a href="lab01_react/index.html" class="btn mb-2" target="_blank">Lab01_React</a>
-                            <br />
-                            วันที่สร้างผลงาน: 24 พฤศจิกายน 2568
                         </div>
+                        <p class="week-date">วันที่สร้างผลงาน: 24 พฤศจิกายน 2568</p>
                     </div>
                 </div>
-                <!-- Week 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="">Week 2: HTML5 & CSS3</h5>
-                            <p>การสร้างโครงร่างและออกแบบหน้าเว็บด้วย HTML5 และ CSS3</p>
+            </div>
+
+            <!-- Week 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="week-title">Week 2: HTML5 &amp; CSS3</h5>
+                        <p class="week-desc">
+                            การสร้างโครงร่างและออกแบบหน้าเว็บด้วย HTML5 และ CSS3
+                        </p>
+                        <div class="mt-2 mb-2">
                             <a href="lab02_guide/index.html" class="btn mb-2" target="_blank">ดูผลงาน</a>
                         </div>
                     </div>
                 </div>
-                <!-- Week 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                             <h5 class="">
-                                Week 3: JavaScript & TypeScript
-                            </h5>
-                            <p>การเขียน JavaScript และ TypeScript</p>
+            </div>
+
+            <!-- Week 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="week-title">Week 3: JavaScript &amp; TypeScript</h5>
+                        <p class="week-desc">
+                            การเขียน JavaScript และ TypeScript
+                        </p>
+                        <div class="mt-2 mb-2">
                             <a href="lab03/index.html" class="btn mb-2" target="_blank">ดูผลงาน</a>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </main>
-        <footer class="text-center mb-3">
-            <p>
-                © 2025 Mobile Web Application Development — College of Computing, Khon
-                Kaen University
-            </p>
-        </footer>
+        </div>
+
+    </main>
+    <footer class="text-center mb-3">
+        <p>
+            © 2025 Mobile Web Application Development — College of Computing, Khon
+            Kaen University
+        </p>
+    </footer>
     <!-- </div> -->
 </body>
 
