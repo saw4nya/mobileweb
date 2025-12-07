@@ -6,71 +6,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ผลงาน ศวรรยา ศิริมูล</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
+<style>
+    body {
+        font-family: 'Kanit', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    header {
+        background-color: white;
+        max-width: 1200px;
+        margin: 30px auto !important;
+        border: 1px solid #A0CADD;
+        box-shadow: 2px 2px rgba(223, 200, 245, 0.345);
+        border-radius: 8px;
+        overflow: auto;
+    }
+
+    .main-wrapper {
+        max-width: 1200px;
+        padding: 2rem;
+        margin: 30px auto !important;
+        border: 1px solid #A0CADD;
+        box-shadow: 2px 2px rgba(223, 200, 245, 0.345);
+        background-color: white;
+        border-radius: 8px;
+
+    }
+
+    h5 {
+        font-weight: 700;
+        color: #3B577D !important;
+    }
+
+    h4 {
+        font-weight: 700;
+        color: #3B577D !important;
+    }
+
+    .card {
+        box-sizing: border-box;
+
+        padding: 0px 20px;
+        border: 1px solid #A0CADD;
+        border-radius: 10px;
+        background-color: #FBFBFB;
+        overflow: auto;
+        background-image: url("data:image/svg+xml,<svg id='patternId' width='30' height='30' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='%23ffffffff'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='1' stroke='%23ddf5f7ff' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+        box-shadow: 2px 2px rgba(223, 200, 245, 0.345);
+        opacity: 0.95;
+
+    }
+
+    .btn {
+        background-color: #DDF5F7;
+        color: #3B577D;
+        font-weight: 600;
+        border: 2px solid #A0CADD;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+    .btn:hover {
+        background-color: #DDF5F7;
+        color: #3B577D;
+        font-weight: 600;
+        border: 2px solid #A0CADD;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+    /* .window {
+        margin: auto;
+        width: 1100px;
+        height: auto;
+        border: 1px solid #A0CADD;
+        border-radius: 10px;
+        background-color: #FBFBFB;
+        overflow: auto;
+        box-shadow: 2px 2px rgba(223, 200, 245, 0.345);
+    } */
+
+    .title-bar {
+        padding: 5px 10px;
+        background-color: #A0CADD;
+        display: flex;
+        color: #3B577D;
+        border-bottom: #A0CADD solid 1px;
+    }
+
+    #close {
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    #close {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    #close:active {
+        animation: shake 0.4s ease;
+    }
+</style>
 
 <body>
-    <header class="text-center py-4">
-        <h3>รายวิชา Mobile Web Application Development</h3>
-        <p>ภาคการศึกษา 2/2568</p>
-        <p>
-            <strong>ชื่อ-สกุล นักศึกษา: นางสาวศวรรยา ศิริมูล</strong>
-        </p>
-        <p>
-            <strong>รหัสนักศึกษา: 663380238-0 </strong>
-        </p>
-    </header>
-    <main class="container mt-4">
-        <h4 class="mb-4 text-primary">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
-        <div class="row g-4">
-            <!-- Week 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="week-title text-primary">
-                            Week 1: การเตรียม Workspace
-                        </h5>
-                        <p>
-                            ติดตั้งเครื่องมือที่จำเป็นสำหรับฝึกปฏิบัติการในรายวิชา
-                            ทดลองสร้าง ionic-vue และ ionic-project
-                        </p>
-                        <a href="lab01_vue/index.html" class="btn btn-primary mb-2" target="_blank">Lab01_Vue</a>
-                        <a href="lab01_react/index.html" class="btn btn-primary mb-2" target="_blank">Lab01_React</a>
-                        <br />
-                        วันที่สร้างผลงาน: 24 พฤศจิกายน 2568
+    <!-- <div class="window"> -->
+        <!-- <div class="title-bar">
+            <span id="title">saw☆nya</span>
+            <span id="close"> [✕] </span>
+        </div> -->
+        <header class="text-center">
+            <div class="title-bar">
+                <span id="title">intro</span>
+                <span id="close"> [✕] </span>
+            </div>
+            <br>
+            <h3 style="font-weight: 700; color: #3B577D;">รายวิชา Mobile Web Application Development</h3>
+            <p style="font-weight: 400; color: #386d86;">ภาคการศึกษา 2/2568</p>
+            <p>
+            <div style="color: #3B577D;">
+                <strong>ชื่อ-สกุล นักศึกษา: นางสาวศวรรยา ศิริมูล</strong>
+            </p>
+            <p>
+                <strong>รหัสนักศึกษา: 663380238-0 </strong>
+            </p>
+            </div>
+            <br>
+        </header>
+        <main class="main-wrapper container mt-4">
+            <h4 class="mb-4 ">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
+            <div class="row g-4">
+                <!-- Week 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="week-title">
+                                Week 1: การเตรียม Workspace
+                            </h5>
+                            <p>
+                                ติดตั้งเครื่องมือที่จำเป็นสำหรับฝึกปฏิบัติการในรายวิชา
+                                ทดลองสร้าง ionic-vue และ ionic-project
+                            </p>
+                            <a href="lab01_vue/index.html" class="btn  mb-2" target="_blank">Lab01_Vue</a>
+                            <a href="lab01_react/index.html" class="btn mb-2" target="_blank">Lab01_React</a>
+                            <br />
+                            วันที่สร้างผลงาน: 24 พฤศจิกายน 2568
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Week 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 2: HTML5 & CSS3</h5>
-                        <p>การสร้างโครงร่างและออกแบบหน้าเว็บด้วย HTML5 และ CSS3</p>
-                        <a href="lab02_guide/index.html" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
+                <!-- Week 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="">Week 2: HTML5 & CSS3</h5>
+                            <p>การสร้างโครงร่างและออกแบบหน้าเว็บด้วย HTML5 และ CSS3</p>
+                            <a href="lab02_guide/index.html" class="btn mb-2" target="_blank">ดูผลงาน</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Week 3 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                         <h5 class="text-primary">
-                            Week 3: JavaScript & TypeScript
-                        </h5>
-                        <p>การเขียน JavaScript และ TypeScript</p>
-                        <a href="lab03/index.html" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
+                <!-- Week 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                             <h5 class="">
+                                Week 3: JavaScript & TypeScript
+                            </h5>
+                            <p>การเขียน JavaScript และ TypeScript</p>
+                            <a href="lab03/index.html" class="btn mb-2" target="_blank">ดูผลงาน</a>
+                        </div>
                     </div>
                 </div>
+
             </div>
-            <!-- เพิมสѷ ัปดาห์อืน ๆ ได ้ ѷ -->
-        </div>
-    </main>
-    <footer class="text-center mt-5 mb-3">
-        <p>
-            © 2025 Mobile Web Application Development — College of Computing, Khon
-            Kaen University
-        </p>
-    </footer>
+        </main>
+        <footer class="text-center mb-3">
+            <p>
+                © 2025 Mobile Web Application Development — College of Computing, Khon
+                Kaen University
+            </p>
+        </footer>
+    <!-- </div> -->
 </body>
 
 </html>
