@@ -19,7 +19,9 @@
         *::after {
             box-sizing: border-box;
         }
-
+        input, button, textarea, select {
+            font-family: "Kanit", sans-serif;
+        }
         body {
             margin: 0;
             font-family: "Kanit", sans-serif;
@@ -117,7 +119,7 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 1.5rem 1rem 3rem;
-            background-image: url(../assets/background1.jpg);
+            background-image: url(./assets/background1.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -326,15 +328,117 @@
                 font-size: 0.8rem;
             }
         }
+
+        .suggest-section {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem 1.5rem 1.8rem;
+            margin-top: 2rem;
+            box-shadow: 0 8px 20px rgba(15, 35, 60, 0.08);
+            border: 1px solid #fde0d8;
+        }
+
+        .suggest-section h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            color: #A73B24;
+        }
+
+        .suggest-section p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .suggest-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #A73B24;
+        }
+
+        .required {
+            color: #e53935;
+        }
+
+        .suggest-form input[type="text"],
+        .suggest-form input[type="url"],
+        .suggest-form input[type="email"],
+        .suggest-form textarea {
+            padding: 0.55rem 0.7rem;
+            border-radius: 0.6rem;
+            border: 1px solid #d9d9e6;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .suggest-form input:focus,
+        .suggest-form textarea:focus {
+            border-color: #A73B24;
+            box-shadow: 0 0 0 2px rgba(167, 59, 36, 0.2);
+        }
+
+        .suggest-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            align-self: flex-end;
+            margin-top: 0.5rem;
+            padding: 0.55rem 1.4rem;
+            border-radius: 999px;
+            border: none;
+            background: #A73B24;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(167, 59, 36, 0.4);
+            transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: #8e331f;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(167, 59, 36, 0.5);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 8px rgba(167, 59, 36, 0.4);
+        }
+
+        /* ให้ฟอร์มเข้ากับจอเล็ก */
+        @media (max-width: 520px) {
+            .suggest-section {
+                padding: 1.1rem 1rem 1.4rem;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <a href="/mobileweb/docs/index.html" class="home-button">กลับไปหน้าแรก</a>
+<header>
+    <div class="header-inner">
 
-        <div class="header-inner">
-
+        <!-- เอา brand + ปุ่ม ไว้แถวเดียวกัน -->
+        <div class="header-row">
             <!-- กลุ่มโลโก้ + ข้อความ -->
             <div class="brand">
                 <!-- Canvas Logo -->
@@ -351,113 +455,135 @@
                 </div>
             </div>
 
+            <a href="/mobileweb/docs/index.html" class="home-button">กลับไปหน้าแรก</a>
         </div>
 
-        <!-- LOGO ANIMATION SCRIPT -->
-        <script>
-            const canvas = document.getElementById("logoCanvas");
-            const ctx = canvas.getContext("2d");
+    </div>
 
-            let angle = 0;
-            let radius = 25;
+    <!-- LOGO ANIMATION SCRIPT -->
+    <script>
+        const canvas = document.getElementById("logoCanvas");
+        const ctx = canvas.getContext("2d");
 
-            function drawLogo() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let angle = 0;
+        let radius = 25;
 
-                // วงกลมพื้นหลัง
-                ctx.beginPath();
-                ctx.arc(40, 40, 35, 0, Math.PI * 2);
-                ctx.fillStyle = "#A73B24";
-                ctx.fill();
+        function drawLogo() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                // วงกลมเล็กหมุนรอบ
-                const x = 40 + radius * Math.cos(angle);
-                const y = 40 + radius * Math.sin(angle);
+            // วงกลมพื้นหลัง
+            ctx.beginPath();
+            ctx.arc(40, 40, 35, 0, Math.PI * 2);
+            ctx.fillStyle = "#A73B24";
+            ctx.fill();
 
-                ctx.beginPath();
-                ctx.arc(x, y, 8, 0, Math.PI * 2);
-                ctx.fillStyle = "#ffffff";
-                ctx.fill();
+            // วงกลมเล็กหมุนรอบ
+            const x = 40 + radius * Math.cos(angle);
+            const y = 40 + radius * Math.sin(angle);
 
-                // ตัวอักษร KKU
-                ctx.font = "bold 18px Kanit";
-                ctx.fillStyle = "#fff";
-                ctx.textAlign = "center";
-                ctx.fillText("KKU", 40, 45);
+            ctx.beginPath();
+            ctx.arc(x, y, 8, 0, Math.PI * 2);
+            ctx.fillStyle = "#ffffff";
+            ctx.fill();
 
-                angle += 0.05;   // ความเร็วหมุน
-            }
+            // ตัวอักษร KKU
+            ctx.font = "bold 18px Kanit";
+            ctx.fillStyle = "#fff";
+            ctx.textAlign = "center";
+            ctx.fillText("KKU", 40, 45);
 
-            function animate() {
-                drawLogo();
-                requestAnimationFrame(animate);
-            }
+            angle += 0.05;   // ความเร็วหมุน
+        }
 
-            animate();
-        </script>
+        function animate() {
+            drawLogo();
+            requestAnimationFrame(animate);
+        }
 
-        <style>
-            /* โลโก้ + layout เบื้องต้น */
-            .brand {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
+        animate();
+    </script>
+
+    <style>
+        /* แถวบนสุด: โลโก้ + ปุ่ม */
+        .header-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* โลโก้ + layout */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #logoCanvas {
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .home-button {
+            margin-left: auto;            
+            padding: 0.4rem 0.9rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            backdrop-filter: blur(4px);
+            transition: 0.2s;
+        }
+
+        .home-button:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-1px);
+        }
+
+        header {
+            /* background: linear-gradient(135deg, #7b2819, #A73B24); */
+            background-image: url(/mobileweb/docs/assets/background1.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            padding: 1.5rem 1rem 2rem;
+        }
+
+        .header-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .student-info {
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .student-id {
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .header-row {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .home-button {
-                position: absolute;
-                right: 20px;
-                top: 20px;
-                background: rgba(255, 255, 255, 0.25);
-                backdrop-filter: blur(4px);
-                padding: 8px 14px;
-                border-radius: 8px;
-                color: #fff;
-                font-weight: 600;
-                text-decoration: none;
-                border: 1px solid rgba(255, 255, 255, 0.4);
-                transition: 0.2s;
+                margin-left: 0;     
+                align-self: flex-end; 
             }
+        }
+    </style>
+</header>
 
-            .home-button:hover {
-                background: rgba(255, 255, 255, 0.4);
-                transform: translateY(-2px);
-            }
-
-            #logoCanvas {
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.1);
-                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-            }
-
-            header {
-                /* background: linear-gradient(135deg, #7b2819, #A73B24); */
-                background-image: url(/mobileweb/docs/assets/background1.jpg);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                color: #fff;
-                padding: 1.5rem 1rem 2rem;
-            }
-
-            .header-inner {
-                display: flex;
-                flex-direction: column;
-                gap: 0.75rem;
-                max-width: 1100px;
-                margin: auto;
-            }
-
-            .student-info {
-                font-size: 0.9rem;
-                opacity: 0.95;
-            }
-
-            .student-id {
-                font-weight: 600;
-            }
-        </style>
-    </header>
 
 
     <main>
@@ -501,12 +627,12 @@
                     <div class="gallery" aria-label="ภาพประกอบศูนย์ประชุมกาญจนาภิเษก">
                         <figure>
                             <img src="https://asset.kku.ac.th/wp-content/uploads/2025/02/2025-02-04_08-51-31_488661.png"
-                                alt="บรรยากาศอาคารจัดประชุมขนาดใหญ่">
+                                alt="">
                             <figcaption>อาคารศูนย์ประชุมขนาดใหญ่ รองรับผู้เข้าร่วมได้จำนวนมาก</figcaption>
                         </figure>
                         <figure>
                             <img src="https://asset.kku.ac.th/wp-content/uploads/2025/02/2025-02-04_08-51-17_428061-scaled.jpg"
-                                alt="ภายในหอประชุมมีผู้เข้าร่วมงานจำนวนมาก">
+                                alt="">
                             <figcaption>ภายในหอประชุม ใช้จัดงานวิชาการและพิธีการต่าง ๆ ของมหาวิทยาลัย</figcaption>
                         </figure>
                     </div>
@@ -539,14 +665,14 @@
 
                     <div class="gallery" aria-label="ภาพประกอบสำนักหอสมุด มข.">
                         <figure>
-                            <img src="https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/499930253_1241228384463933_5576393451541799823_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=7vBaypCuGVEQ7kNvwEzEAs7&_nc_oc=Adnw_uyXRG8qGHrqrwTmWXnhuMo2Bbv9AwsyPLCZBlGVeEezSa4Z-SLruFnxqc-E4E0&_nc_zt=23&_nc_ht=scontent-bkk1-2.xx&_nc_gid=Ri3DFShMg-EV2tDMY6j0Eg&oh=00_Afj6p3-he9XNkYs2g4UwEe6BX09q-DiElNd92FevyT6EsQ&oe=69332387"
-                                alt="ภายในห้องสมุดที่เต็มไปด้วยหนังสือบนชั้น">
+                            <img src="https://scontent.fkkc3-1.fna.fbcdn.net/v/t39.30808-6/499793623_1241226541130784_9131986083567990846_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGnlbdPLENCUEzgW9Vp8iAT7vtNi-eKmifu-02L54qaJ6bh0Wuyb1mYHy1y5LPFI9UgIouWNibQiTDvsZW-6WDf&_nc_ohc=DpAUMIz5lcUQ7kNvwFClPfF&_nc_oc=AdlATwD6U7zPBMICjvJYmi3fQmfq0WAiQ0Atd3l0GJcuZNLhLUSz3_CrEniOA4toDAY&_nc_zt=23&_nc_ht=scontent.fkkc3-1.fna&_nc_gid=JCJRMkjLT62qnR-iey3eGQ&oh=00_Afl3Aa8gUKknWD2w0Li0-3FkEppFvxityBA8H1jvA5VW-A&oe=693AD862"
+                                alt="">
                             <figcaption>บ่าย–เย็นมีร้านอาหาร/ของว่างให้เลือกหลากหลาย</figcaption>
                         </figure>
                         <figure>
-                            <img src="https://www.kku.ac.th/wp-content/uploads/2023/12/IMG_0832-scaled.jpg"
-                                alt="นักศึกษากำลังอ่านหนังสือและทำงานกลุ่มภายในห้องสมุด">
-                            <figcaption>มีแปลงดอกไม้/แปลงผักตามโครงการ Smart Flower Farm และงานวิจัยด้านเกษตรอัจฉริยะ</figcaption>
+                            <img src="https://www.kku.ac.th/wp-content/uploads/2023/12/IMG_0832-scaled.jpg" alt="">
+                            <figcaption>มีแปลงดอกไม้/แปลงผักตามโครงการ Smart Flower Farm และงานวิจัยด้านเกษตรอัจฉริยะ
+                            </figcaption>
                         </figure>
                     </div>
                 </div>
@@ -579,12 +705,12 @@
                     <div class="gallery" aria-label="ภาพประกอบอาคารเรียนรวมคอมเพล็กซ์">
                         <figure>
                             <img src="https://scontent-bkk1-1.xx.fbcdn.net/v/t1.6435-9/128428428_3307654149339666_6182460962715250350_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=IBcSLCyp7RwQ7kNvwE0dPSZ&_nc_oc=Adn0TTAQBtLQtgYjctBR2_vqmlDmahqtKScxkls9ulpt0BcXrHGyKNKWSr39_-5NcO0&_nc_zt=23&_nc_ht=scontent-bkk1-1.xx&_nc_gid=PWnHIrcVv8mzFICExIulUg&oh=00_AfixmUvF8osj0m2o_LdbOikT0Rkd3sOd1XhgnHNjBQaRQg&oe=6954E586"
-                                alt="ด้านหน้าของอาคารเรียนที่ทันสมัย">
+                                alt="">
                             <figcaption>บรรยากาศดี เหมาะถ่ายรูปและนั่งชิลหลังเลิกเรียน</figcaption>
                         </figure>
                         <figure>
                             <img src="https://cms.dmpcdn.com/ugcarticle/2020/02/03/ddcac7b0-1658-11ec-bf85-1bca4c7f474f_original.jpg"
-                                alt="ห้องเรียนที่มีโปรเจกเตอร์และโต๊ะเก้าอี้เรียงเป็นระเบียบ">
+                                alt="">
                             <figcaption>จุดออกกำลังกายยอดนิยม มีลู่วิ่ง/ทางเดินริมบึง
                             </figcaption>
                         </figure>
@@ -620,12 +746,12 @@
                     <div class="gallery" aria-label="ภาพประกอบหอศิลป์และวัฒนธรรม">
                         <figure>
                             <img src="https://cac.kku.ac.th/wp-content/uploads/2021/05/MDL01816-scaled-e1626802717621.jpg"
-                                alt="ห้องจัดแสดงภาพวาดในแกลเลอรี">
+                                alt="">
                             <figcaption>ห้องจัดแสดงผลงานศิลปะในบรรยากาศเงียบสงบ</figcaption>
                         </figure>
                         <figure>
                             <img src="https://ak-d.tripcdn.com/images/1mi5q2224v9xtqf4wE954_W_640_0_R5_Q80.jpg?proc=source/trip"
-                                alt="กลุ่มคนกำลังดูงานศิลปะภายในหอศิลป์">
+                                alt="">
                             <figcaption>นักศึกษาและผู้สนใจเยี่ยมชมนิทรรศการศิลปะที่จัดขึ้นเป็นระยะ</figcaption>
                         </figure>
                     </div>
@@ -633,6 +759,40 @@
             </article>
 
         </section>
+        <section id="suggest-place" class="suggest-section">
+            <h2>แบบฟอร์มแนะนำสถานที่ใน มข.</h2>
+            <form action="https://api.web3forms.com/submit" method="POST" class="suggest-form">
+                <!-- ใส่ access key ของ Web3Forms ตรงนี้ -->
+                <input type="hidden" name="access_key" value="60927a54-d805-43b0-80d0-ee1affd9c4a1">
+
+                <!-- หัวข้ออีเมล / ชื่อฟอร์ม -->
+                <input type="hidden" name="subject" value="คำแนะนำสถานที่ใหม่จาก KKU Campus Guide">
+
+                <!-- ป้องกันบอท (honeypot) -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+                <div class="form-group">
+                    <label for="place_name">ชื่อสถานที่ <span class="required">*</span></label>
+                    <input type="text" id="place_name" name="ชื่อสถานที่" required placeholder="เช่น บึงสีฐาน">
+                </div>
+
+                <div class="form-group">
+                    <label for="place_detail">รายละเอียดสถานที่ <span class="required">*</span></label>
+                    <textarea id="place_detail" name="รายละเอียดสถานที่" rows="4" required
+                        placeholder="บรรยายบรรยากาศ การเดินทาง จุดเด่น ฯลฯ"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image_url">URL ของภาพสถานที่ <span class="required">*</span></label>
+                    <input type="url" id="image_url" name="URL ของภาพ" required
+                        placeholder="เช่น https://example.com/myplace.jpg">
+                </div>
+
+
+                <button type="submit" class="btn-submit">ส่งคำแนะนำสถานที่</button>
+            </form>
+        </section>
+
     </main>
 
     <footer>
