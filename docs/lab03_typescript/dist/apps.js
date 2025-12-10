@@ -45,7 +45,7 @@ document.getElementById("searchMajorBtn").onclick = () => {
     showList(results);
     alert(`พบในสาขา: ${results.length} คน`);
 };
-
+// เพิ่มค้นหาด้วย Email
 document.getElementById("searchEmailBtn").onclick = () => {
     const keyword = document.getElementById("searchEmail").value;
     const results = manager.findStudentsByEmail(keyword);
