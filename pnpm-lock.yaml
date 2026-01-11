@@ -6,7 +6,11 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    dependencies:
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
 
   apps/lab01_react:
     dependencies:
@@ -153,6 +157,94 @@ importers:
       '@capacitor/cli':
         specifier: 7.4.4
         version: 7.4.4
+      '@vitejs/plugin-legacy':
+        specifier: ^5.0.0
+        version: 5.4.3(terser@5.44.1)(vite@5.4.21(@types/node@24.10.1)(terser@5.44.1))
+      '@vitejs/plugin-vue':
+        specifier: ^4.0.0
+        version: 4.6.2(vite@5.4.21(@types/node@24.10.1)(terser@5.44.1))(vue@3.5.25(typescript@5.9.3))
+      '@vue/eslint-config-typescript':
+        specifier: ^12.0.0
+        version: 12.0.0(eslint-plugin-vue@9.33.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.9.3)
+      '@vue/test-utils':
+        specifier: ^2.3.0
+        version: 2.4.6
+      cypress:
+        specifier: ^13.5.0
+        version: 13.17.0
+      eslint:
+        specifier: ^8.35.0
+        version: 8.57.1
+      eslint-plugin-vue:
+        specifier: ^9.9.0
+        version: 9.33.0(eslint@8.57.1)
+      jsdom:
+        specifier: ^22.1.0
+        version: 22.1.0
+      terser:
+        specifier: ^5.4.0
+        version: 5.44.1
+      typescript:
+        specifier: ~5.9.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@24.10.1)(terser@5.44.1)
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6(jsdom@22.1.0)(terser@5.44.1)
+      vue-tsc:
+        specifier: ^2.1.10
+        version: 2.2.12(typescript@5.9.3)
+
+  apps/lab04-photo-vue:
+    dependencies:
+      '@capacitor/app':
+        specifier: 8.0.0
+        version: 8.0.0(@capacitor/core@8.0.0)
+      '@capacitor/camera':
+        specifier: ^8.0.0
+        version: 8.0.0(@capacitor/core@8.0.0)
+      '@capacitor/core':
+        specifier: 8.0.0
+        version: 8.0.0
+      '@capacitor/filesystem':
+        specifier: ^8.0.0
+        version: 8.0.0(@capacitor/core@8.0.0)
+      '@capacitor/haptics':
+        specifier: 8.0.0
+        version: 8.0.0(@capacitor/core@8.0.0)
+      '@capacitor/keyboard':
+        specifier: 8.0.0
+        version: 8.0.0(@capacitor/core@8.0.0)
+      '@capacitor/preferences':
+        specifier: ^8.0.0
+        version: 8.0.0(@capacitor/core@8.0.0)
+      '@capacitor/status-bar':
+        specifier: 8.0.0
+        version: 8.0.0(@capacitor/core@8.0.0)
+      '@ionic/pwa-elements':
+        specifier: ^3.3.0
+        version: 3.3.0
+      '@ionic/vue':
+        specifier: ^8.0.0
+        version: 8.7.10(@stencil/core@4.38.3)(vue-router@4.6.3(vue@3.5.25(typescript@5.9.3)))(vue@3.5.25(typescript@5.9.3))
+      '@ionic/vue-router':
+        specifier: ^8.0.0
+        version: 8.7.10(@stencil/core@4.38.3)(vue-router@4.6.3(vue@3.5.25(typescript@5.9.3)))(vue@3.5.25(typescript@5.9.3))
+      ionicons:
+        specifier: ^7.0.0
+        version: 7.4.0
+      vue:
+        specifier: ^3.3.0
+        version: 3.5.25(typescript@5.9.3)
+      vue-router:
+        specifier: ^4.2.0
+        version: 4.6.3(vue@3.5.25(typescript@5.9.3))
+    devDependencies:
+      '@capacitor/cli':
+        specifier: 8.0.0
+        version: 8.0.0
       '@vitejs/plugin-legacy':
         specifier: ^5.0.0
         version: 5.4.3(terser@5.44.1)(vite@5.4.21(@types/node@24.10.1)(terser@5.44.1))
@@ -710,28 +802,74 @@ packages:
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
 
+  '@capacitor/app@8.0.0':
+    resolution: {integrity: sha512-OwzIkUs4w433Bu9WWAEbEYngXEfJXZ9Wmdb8eoaqzYBgB0W9/3Ed/mh6sAYPNBAZlpyarmewgP7Nb+d3Vrh+xA==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
+  '@capacitor/camera@8.0.0':
+    resolution: {integrity: sha512-Iu8j2oxoIhY2mLuoEckbL7PFgw1XFm1nqmeWdIkILpcT3H9A+BrSDUDlzWqM/EeaDKo6JnhR59tYHwUhOdXaUg==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
   '@capacitor/cli@7.4.4':
     resolution: {integrity: sha512-J7ciBE7GlJ70sr2s8oz1+H4ZdNk4MGG41fsakUlDHWva5UWgFIZYMiEdDvGbYazAYTaxN3lVZpH9zil9FfZj+Q==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
+  '@capacitor/cli@8.0.0':
+    resolution: {integrity: sha512-v9hEBi69xGxuuZhg55N031bMEenKaPSv71Il8C22VOOH6surDyv/MPeImN0oVfFc7eiklaW3rDFYVz6cmXfJWQ==}
+    engines: {node: '>=22.0.0'}
+    hasBin: true
+
   '@capacitor/core@7.4.4':
     resolution: {integrity: sha512-xzjxpr+d2zwTpCaN0k+C6wKSZzWFAb9OVEUtmO72ihjr/NEDoLvsGl4WLfjWPcCO2zOy0b2X52tfRWjECFUjtw==}
+
+  '@capacitor/core@8.0.0':
+    resolution: {integrity: sha512-250HTVd/W/KdMygoqaedisvNbHbpbQTN2Hy/8ZYGm1nAqE0Fx7sGss4l0nDg33STxEdDhtVRoL2fIaaiukKseA==}
+
+  '@capacitor/filesystem@8.0.0':
+    resolution: {integrity: sha512-RRGNLW9xEqvVVHGyGlfS4Oy0R3Na+bEefwZElKbex22S9eZr5cg8wc750BPPVwbcv5lf5fJymkY8x8y6UwKPyg==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
 
   '@capacitor/haptics@7.0.2':
     resolution: {integrity: sha512-vqfeEM6s2zMgLjpITCTUIy7P/hadq/Gr5E/RClFgMJPB41Y5FsqOKD+j85/uwh8N2cf/aWaPeXUmjnTzJbEB2g==}
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
 
+  '@capacitor/haptics@8.0.0':
+    resolution: {integrity: sha512-DY1IUOjke1T4ITl7mFHQIKCaJJyHYAYRYHG9bVApU7PDOZiMVGMp48Yjzdqjya+wv/AHS5mDabSTUmhJ5uDvBA==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
   '@capacitor/keyboard@7.0.3':
     resolution: {integrity: sha512-BIBKjmky5rOYNhvYhNeDi0MMvjwYZ6YF9JoCYcGKvKY+XLJKtezsEL78XfOlgWZBkbfR8uq3tzktY6PqgoYLKA==}
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
 
+  '@capacitor/keyboard@8.0.0':
+    resolution: {integrity: sha512-ycPW6iQyFwzDK95jihesj5EGiyyGSfbBqNek11iNp9tBOB7zDeYkUA2S/vPpOETt3dhP6pWr7a9gNVGuEfj11g==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
+  '@capacitor/preferences@8.0.0':
+    resolution: {integrity: sha512-NsE7Srk9Zr0SxiVelHGiAJR7M238eyCD6dI/sDhu3ckKwFrXn8/GRyGr+SZcnGLlQKy948li8Pfcfr0dqxNf1g==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
   '@capacitor/status-bar@7.0.3':
     resolution: {integrity: sha512-JyRpVnKwHij9hgPWolF6PK+HT3e2HSPjN11/h2OmKxq8GAdPGARFLv+97eZl0pvuvm0Kka/LpiLb5whXISBg7Q==}
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
+
+  '@capacitor/status-bar@8.0.0':
+    resolution: {integrity: sha512-aIj3bc7z8lfPgOen8HlrBrkfnxpFnh21OCx6jCUx4Mvv+B6eEkUQ49b32DOddgVfr+igRHLX2SYi7duqIsNDXg==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
+  '@capacitor/synapse@1.0.4':
+    resolution: {integrity: sha512-/C1FUo8/OkKuAT4nCIu/34ny9siNHr9qtFezu4kxm6GY1wNFxrCFWjfYx5C1tUhVGz3fxBABegupkpjXvjCHrw==}
 
   '@colors/colors@1.5.0':
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -959,6 +1097,10 @@ packages:
 
   '@ionic/core@8.7.10':
     resolution: {integrity: sha512-auDIGVQCwh/gc69WwbR/DFzZPx4O5EpYTBjS2cRzZXKK7yS1ZMey2VLflqbdpQFye+tyBCJvfcOEHgUo1vuVFA==}
+
+  '@ionic/pwa-elements@3.3.0':
+    resolution: {integrity: sha512-vbykpxd2nGRlA67AnqDwsiVf8PUmInLyi6lQdnPDjeiML1WZa0CPe6r632nGDV9PTi+sWNde9Xexg9SD6Pwyqw==}
+    engines: {node: '>=16.0.0', npm: '>=8.0.0'}
 
   '@ionic/react-router@8.7.10':
     resolution: {integrity: sha512-HD7w8gkVMgseo3Iqva1S10aLcfJVz81PEXJgEH7Ixdv/gyAPuytCnG9g+pNkrMQ+4TTlHC9DQRWkKDvetqW6Hw==}
@@ -3884,6 +4026,7 @@ packages:
   whatwg-encoding@2.0.0:
     resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}
     engines: {node: '>=12'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@3.0.0:
     resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
@@ -4658,7 +4801,37 @@ snapshots:
     dependencies:
       '@capacitor/core': 7.4.4
 
+  '@capacitor/app@8.0.0(@capacitor/core@8.0.0)':
+    dependencies:
+      '@capacitor/core': 8.0.0
+
+  '@capacitor/camera@8.0.0(@capacitor/core@8.0.0)':
+    dependencies:
+      '@capacitor/core': 8.0.0
+
   '@capacitor/cli@7.4.4':
+    dependencies:
+      '@ionic/cli-framework-output': 2.2.8
+      '@ionic/utils-subprocess': 3.0.1
+      '@ionic/utils-terminal': 2.3.5
+      commander: 12.1.0
+      debug: 4.4.3(supports-color@8.1.1)
+      env-paths: 2.2.1
+      fs-extra: 11.3.2
+      kleur: 4.1.5
+      native-run: 2.0.1
+      open: 8.4.2
+      plist: 3.1.0
+      prompts: 2.4.2
+      rimraf: 6.1.2
+      semver: 7.7.3
+      tar: 6.2.1
+      tslib: 2.8.1
+      xml2js: 0.6.2
+    transitivePeerDependencies:
+      - supports-color
+
+  '@capacitor/cli@8.0.0':
     dependencies:
       '@ionic/cli-framework-output': 2.2.8
       '@ionic/utils-subprocess': 3.0.1
@@ -4684,17 +4857,44 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+  '@capacitor/core@8.0.0':
+    dependencies:
+      tslib: 2.8.1
+
+  '@capacitor/filesystem@8.0.0(@capacitor/core@8.0.0)':
+    dependencies:
+      '@capacitor/core': 8.0.0
+      '@capacitor/synapse': 1.0.4
+
   '@capacitor/haptics@7.0.2(@capacitor/core@7.4.4)':
     dependencies:
       '@capacitor/core': 7.4.4
+
+  '@capacitor/haptics@8.0.0(@capacitor/core@8.0.0)':
+    dependencies:
+      '@capacitor/core': 8.0.0
 
   '@capacitor/keyboard@7.0.3(@capacitor/core@7.4.4)':
     dependencies:
       '@capacitor/core': 7.4.4
 
+  '@capacitor/keyboard@8.0.0(@capacitor/core@8.0.0)':
+    dependencies:
+      '@capacitor/core': 8.0.0
+
+  '@capacitor/preferences@8.0.0(@capacitor/core@8.0.0)':
+    dependencies:
+      '@capacitor/core': 8.0.0
+
   '@capacitor/status-bar@7.0.3(@capacitor/core@7.4.4)':
     dependencies:
       '@capacitor/core': 7.4.4
+
+  '@capacitor/status-bar@8.0.0(@capacitor/core@8.0.0)':
+    dependencies:
+      '@capacitor/core': 8.0.0
+
+  '@capacitor/synapse@1.0.4': {}
 
   '@colors/colors@1.5.0':
     optional: true
@@ -4897,6 +5097,8 @@ snapshots:
       '@stencil/core': 4.38.0
       ionicons: 8.0.13
       tslib: 2.8.1
+
+  '@ionic/pwa-elements@3.3.0': {}
 
   '@ionic/react-router@8.7.10(react-dom@19.0.0(react@19.0.0))(react-router-dom@5.3.4(react@19.0.0))(react-router@5.3.4(react@19.0.0))(react@19.0.0)':
     dependencies:
