@@ -192,19 +192,6 @@
             color: #ffffff;
         }
 
-        /* responsive */
-        @media (max-width: 700px) {
-            .info {
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            .download-section {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
         /* ไฮไลท์แบบปากกา */
         .highlight {
             position: relative;
@@ -223,6 +210,42 @@
             opacity: .9;
             z-index: -1;
             border-radius: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .home-button {
+                margin-left: 0 !important;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .highlight::before {
+                height: 55%;
+                /* ขยายไฮไลท์ให้ตามตัวหนังสือ */
+                bottom: 2px;
+            }
+
+            h1 {
+                font-size: 26px;
+                line-height: 1.3;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .info {
+                font-size: 14px;
+                line-height: 1.5;
+            }
         }
     </style>
 </head>
