@@ -20,5 +20,11 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom'
+  },
+  server: {
+    allowedHosts: [
+      'flawier-subcontained-raelynn.ngrok-free.dev'
+    ]
   }
+  
 })

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 04: Photo Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Kanit", sans-serif;
+        }
+
+        body {
+            background: #D3DAD9;
+            color: #37353E;
+            padding: 60px 20px;
+
+        }
+
+        /* main card */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: #ffffff;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='%23f8f8f8ff'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='1' stroke='%23d3dad972' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
+        }
+
+        /* header */
+        h1 {
+            font-size: 34px;
+            font-weight: 600;
+            color: #44444E;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            display: flex;
+            gap: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #715A5A;
+        }
+
+        /* home button */
+        .home-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            background: #44444E;
+            color: #D3DAD9;
+            text-decoration: none;
+            font-size: 14px;
+            transition: .3s;
+            margin-left: auto !important;
+        }
+
+        .home-button:hover {
+            background: #37353E;
+        }
+
+        .container>.home-button {
+            display: block;
+            width: fit-content;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ปรับ info ให้ไม่ดันลง */
+        .info {
+            margin-top: 10px;
+        }
+
+
+        /* section title */
+        h3 {
+            font-size: 20px;
+            color: #44444E;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* image grid */
+        .tablet-images,
+        .mobile-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            /* เล็กลง */
+            gap: 30px;
+            margin-bottom: 50px;
+            justify-items: center;
+            /* จัดรูปให้อยู่กลางช่อง */
+        }
+
+        .tablet-images img,
+        .mobile-images img {
+            max-width: 480px;
+            /* ขนาดโพลารอยด์ */
+            width: 100%;
+            border-radius: 6px;
+            background: white;
+            padding: 14px 14px 40px 14px;
+            /* ล่างหนาแบบโพลารอยด์ */
+            transition: .4s ease;
+            filter: grayscale(10%);
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, .15),
+                0 2px 5px rgba(0, 0, 0, .08);
+            transform: rotate(var(--r));
+        }
+
+
+
+        .tablet-images img:hover,
+        .mobile-images img:hover {
+            transform: rotate(0deg) scale(1.05);
+            filter: grayscale(0%);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, .25);
+        }
+
+        /* download area */
+        .download-section {
+            background: #44444E;
+            padding: 40px;
+            border-radius: 18px;
+            color: #D3DAD9;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* หัวข้อ */
+        .download-section h3 {
+            color: #D3DAD9;
+            font-size: 22px;
+            margin: 0;
+        }
+
+        /* คำอธิบาย */
+        .download-section p {
+            font-size: 15px;
+            color: #bdbdbd;
+            margin: 0;
+        }
+
+        /* ปุ่ม */
+        .download-section .btn {
+            align-self: flex-start;
+            padding: 14px 32px;
+            border-radius: 30px;
+            background: #D3DAD9;
+            color: #37353E;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .download-section .btn:hover {
+            background: #715A5A;
+            color: #ffffff;
+        }
+
+
+        /* button */
+        .btn {
+            padding: 16px 36px;
+            border-radius: 40px;
+            background: #D3DAD9;
+            color: #37353E;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #715A5A;
+            color: #ffffff;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .info {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .download-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* ไฮไลท์แบบปากกา */
+        .highlight {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .highlight::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            bottom: 4px;
+            width: calc(100% + 12px);
+            height: 40%;
+            background: #D3DAD9;
+            opacity: .9;
+            z-index: -1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1><span class="highlight">Lab 04: Ionic Vue</span></h1>
+                <div class="info">
+                    <p><strong>ผู้จัดทำ:</strong> ศวรรยา ศิริมูล</p>
+                    <p><strong>รหัสนักศึกษา:</strong> 663380238-0</p>
+                </div>
+
+
+            </div>
+
+
+            <a href="../index.html" class="home-button">← กลับไปหน้าแรก</a>
+        </div>
+        <br>
+        <h3><span class="highlight">ตัวอย่างหน้าจอการทำงาน</span></h3>
+
+
+        <div class="tablet-images">
+            <img src="public/IMG_4003.jpg" alt="หน้าจอแอป Photo Gallery">
+            <img src="public/IMG_3996.jpg" alt="หน้าจอแอป Photo Gallery">
+        </div>
+
+        <div class="mobile-images">
+            <img src="public/IMG_8193.jpg" alt="หน้าจอแอป Photo Gallery">
+            <img src="public/IMG_8194.jpg" alt="หน้าจอแอป Photo Gallery">
+        </div>
+
+        <div class="download-section">
+            <h3>ดาวน์โหลดไฟล์สำหรับ Android (.apk)</h3>
+            <p>สามารถดาวน์โหลดได้ที่นี่:</p>
+            <a href="public/" download="lab4apk_663380238-0.apk" class="btn">Download</a>
+        </div>
+    </div>
+</body>
+
+</html>

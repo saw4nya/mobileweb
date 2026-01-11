@@ -2,8 +2,9 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Photo Gallery</ion-title>
-        <ion-title size="small">โดย ศวรรยา ศิริมูล 663380238-0</ion-title>
+<div style="font-weight: bold; font-size: 1.1em;">Photo Gallery</div>        <div style="font-size: 0.7em; font-weight: normal; margin-top: 4px; opacity: 0.8; ">
+          โดย ศวรรยา ศิริมูล 663380238-0
+        </div>
       </ion-toolbar>
     </ion-header>
 

@@ -9,8 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.23.0",
   "dependencies": {
+    "@capacitor/android": "^8.0.0",
     "typescript": "^5.9.3"
   }
 }
