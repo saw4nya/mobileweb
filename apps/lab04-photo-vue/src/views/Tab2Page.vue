@@ -3,17 +3,20 @@
     <ion-header>
       <ion-toolbar>
         <ion-title>Photo Gallery</ion-title>
+        <ion-title size="small">โดย ศวรรยา ศิริมูล 663380238-0</ion-title>
       </ion-toolbar>
     </ion-header>
+
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Photo Gallery</ion-title>
-        </ion-toolbar>
-      </ion-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" v-for="photo in photos" :key="photo.filepath">
+            <ion-img :src="photo.webviewPath"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
       <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-        <!-- CHANGE: Add a click event listener to the floating action button. -->
         <ion-fab-button @click="addNewToGallery()">
           <ion-icon :icon="camera"></ion-icon>
         </ion-fab-button>
@@ -24,11 +27,15 @@
 
 <script setup lang="ts">
 import { camera } from 'ionicons/icons';
-import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+// เพิ่ม Component สำหรับแสดงรูปภาพ
+import {
+  IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
+  IonToolbar, IonTitle, IonContent,
+  IonGrid, IonRow, IonCol, IonImg
+} from '@ionic/vue';
 
-// CHANGE: Add `usePhotoGallery` import
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
-// CHANGE: Destructure `addNewToGallery` from `usePhotoGallery()
-const { addNewToGallery } = usePhotoGallery();
+// CHANGE: ดึงทั้ง addNewToGallery และ photos มาใช้งาน
+const { photos, addNewToGallery } = usePhotoGallery();
 </script>
