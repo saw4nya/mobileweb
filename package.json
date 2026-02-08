@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@capacitor/android": "^8.0.0",
+    "firebase": "^12.8.0",
     "typescript": "^5.9.3"
   }
 }
