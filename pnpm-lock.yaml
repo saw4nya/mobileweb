@@ -441,6 +441,9 @@ importers:
       '@ionic/vue-router':
         specifier: ^8.0.0
         version: 8.7.17(@stencil/core@4.41.1)(vue-router@4.6.4(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))
+      firebase:
+        specifier: ^12.8.0
+        version: 12.8.0
       ionicons:
         specifier: ^7.0.0
         version: 7.4.0
