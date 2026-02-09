@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"; // นำเข้า Firestore
+import { getFirestore } from "firebase/firestore"; // ต้องมีอันนี้
 
 const firebaseConfig = {
   apiKey: "AIzaSyDtOsKfIclyCHYyZPefG8JXQIHqstcFT3U",
@@ -11,8 +11,6 @@ const firebaseConfig = {
   measurementId: "G-5CPLN2GWPC"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firestore และ export ออกไปใช้งาน
 export const db = getFirestore(app);

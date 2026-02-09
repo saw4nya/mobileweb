@@ -36,9 +36,12 @@ import { ref } from "vue";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useRouter } from "vue-router";
-
+import { 
+  IonPage, IonHeader, IonToolbar, IonTitle, 
+  IonContent, IonInput, IonSelect, IonSelectOption, 
+  IonTextarea, IonButton, IonItem 
+} from '@ionic/vue';
 const router = useRouter();
-
 const title = ref("");
 const amount = ref(0);
 const type = ref("expense");
