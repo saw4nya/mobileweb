@@ -1,0 +1,7 @@
+{
+  "name": "lab07-authen",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
