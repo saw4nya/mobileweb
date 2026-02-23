@@ -667,6 +667,91 @@ importers:
         specifier: ^2.1.10
         version: 2.2.12(typescript@5.9.3)
 
+  apps/lab09-sensors:
+    dependencies:
+      '@capacitor-community/text-to-speech':
+        specifier: ^8.0.0
+        version: 8.0.0(@capacitor/core@8.1.0)
+      '@capacitor/android':
+        specifier: 8.1.0
+        version: 8.1.0(@capacitor/core@8.1.0)
+      '@capacitor/app':
+        specifier: 8.0.1
+        version: 8.0.1(@capacitor/core@8.1.0)
+      '@capacitor/core':
+        specifier: 8.1.0
+        version: 8.1.0
+      '@capacitor/haptics':
+        specifier: 8.0.0
+        version: 8.0.0(@capacitor/core@8.1.0)
+      '@capacitor/keyboard':
+        specifier: 8.0.0
+        version: 8.0.0(@capacitor/core@8.1.0)
+      '@capacitor/motion':
+        specifier: ^8.0.0
+        version: 8.0.0(@capacitor/core@8.1.0)
+      '@capacitor/status-bar':
+        specifier: 8.0.1
+        version: 8.0.1(@capacitor/core@8.1.0)
+      '@ionic/vue':
+        specifier: ^8.0.0
+        version: 8.7.17(@stencil/core@4.41.1)(vue-router@4.6.4(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))
+      '@ionic/vue-router':
+        specifier: ^8.0.0
+        version: 8.7.17(@stencil/core@4.41.1)(vue-router@4.6.4(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))
+      ionicons:
+        specifier: ^7.0.0
+        version: 7.4.0
+      vue:
+        specifier: ^3.3.0
+        version: 3.5.26(typescript@5.9.3)
+      vue-router:
+        specifier: ^4.2.0
+        version: 4.6.4(vue@3.5.26(typescript@5.9.3))
+    devDependencies:
+      '@capacitor/cli':
+        specifier: 8.1.0
+        version: 8.1.0
+      '@vitejs/plugin-legacy':
+        specifier: ^5.0.0
+        version: 5.4.3(terser@5.44.1)(vite@5.4.21(@types/node@25.0.8)(terser@5.44.1))
+      '@vitejs/plugin-vue':
+        specifier: ^4.0.0
+        version: 4.6.2(vite@5.4.21(@types/node@25.0.8)(terser@5.44.1))(vue@3.5.26(typescript@5.9.3))
+      '@vue/eslint-config-typescript':
+        specifier: ^12.0.0
+        version: 12.0.0(eslint-plugin-vue@9.33.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.9.3)
+      '@vue/test-utils':
+        specifier: ^2.3.0
+        version: 2.4.6
+      cypress:
+        specifier: ^13.5.0
+        version: 13.17.0
+      eslint:
+        specifier: ^8.35.0
+        version: 8.57.1
+      eslint-plugin-vue:
+        specifier: ^9.9.0
+        version: 9.33.0(eslint@8.57.1)
+      jsdom:
+        specifier: ^22.1.0
+        version: 22.1.0
+      terser:
+        specifier: ^5.4.0
+        version: 5.44.1
+      typescript:
+        specifier: ~5.9.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@25.0.8)(terser@5.44.1)
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6(jsdom@22.1.0)(terser@5.44.1)
+      vue-tsc:
+        specifier: ^2.1.10
+        version: 2.2.12(typescript@5.9.3)
+
 packages:
 
   '@adobe/css-tools@4.4.4':
@@ -1179,6 +1264,11 @@ packages:
     resolution: {integrity: sha512-0ZrskXVEHSWIqZM/sQZ4EV3jZJXRkio/WCxaqKZP1g//CEWEPSfeZFcms4XeKBCHU0ZKnIkdJeU/kF+eRp5lBg==}
     engines: {node: '>=6.9.0'}
 
+  '@capacitor-community/text-to-speech@8.0.0':
+    resolution: {integrity: sha512-8GCRavhp4uJft+DsJTywxUmMidMxJVTWHtrCKHjai5LPcJwHI93zpf1LsuvNtTSv/AeC0+oB0ULi/kHzqoB5Bg==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
   '@capacitor-firebase/authentication@8.0.1':
     resolution: {integrity: sha512-F9ocfBGAnMGSvZ7dfwcqACS17HFZEF7B3dSbao34ZBxo5wCDikCROX/T6L5jNq2CGX4ByLOpOmvvzfH+nT5w3A==}
     peerDependencies:
@@ -1277,6 +1367,11 @@ packages:
 
   '@capacitor/keyboard@8.0.0':
     resolution: {integrity: sha512-ycPW6iQyFwzDK95jihesj5EGiyyGSfbBqNek11iNp9tBOB7zDeYkUA2S/vPpOETt3dhP6pWr7a9gNVGuEfj11g==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
+  '@capacitor/motion@8.0.0':
+    resolution: {integrity: sha512-eCTe9+ZSVw2dQLQLvq5vfp2GGnMmsAy5jn4boKB93CHEenD9ZZojXZYJn1u4zUWhfj9cGXSxu+2j7WaQbkMlPg==}
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
 
@@ -5587,6 +5682,10 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
+  '@capacitor-community/text-to-speech@8.0.0(@capacitor/core@8.1.0)':
+    dependencies:
+      '@capacitor/core': 8.1.0
+
   '@capacitor-firebase/authentication@8.0.1(@capacitor/core@8.0.2)(firebase@12.8.0)':
     dependencies:
       '@capacitor/core': 8.0.2
@@ -5780,6 +5879,10 @@ snapshots:
       '@capacitor/core': 8.0.2
 
   '@capacitor/keyboard@8.0.0(@capacitor/core@8.1.0)':
+    dependencies:
+      '@capacitor/core': 8.1.0
+
+  '@capacitor/motion@8.0.0(@capacitor/core@8.1.0)':
     dependencies:
       '@capacitor/core': 8.1.0
 

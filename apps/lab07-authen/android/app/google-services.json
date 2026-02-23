@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "320251108260",
+    "project_id": "mobileweb-9071d",
+    "storage_bucket": "mobileweb-9071d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320251108260:android:f99affe8cb359a14da3f31",
+        "android_client_info": {
+          "package_name": "cpkku.sawanya.lab08"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320251108260-244d2gb7dieod4tqj5o2sb1avliuvpso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm1bzypEm1LcKGXq4Z0EZh5_S24s9xFsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320251108260-244d2gb7dieod4tqj5o2sb1avliuvpso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320251108260:android:01d593c3d5d3de7dda3f31",
+        "android_client_info": {
+          "package_name": "cpkku.sawanya.lab7"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320251108260-244d2gb7dieod4tqj5o2sb1avliuvpso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm1bzypEm1LcKGXq4Z0EZh5_S24s9xFsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320251108260-244d2gb7dieod4tqj5o2sb1avliuvpso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
