@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Lab08: Gemini Vision โดย ศวรรยา</ion-title>
+        <ion-title>Lab08: Gemini Vision โดย วชิราวุธ</ion-title>
       </ion-toolbar>
     </ion-header>
 

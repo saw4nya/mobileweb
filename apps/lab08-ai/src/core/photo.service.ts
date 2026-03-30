@@ -35,3 +35,5 @@ export class PhotoService {
     return { base64: photo.base64String, mimeType: photo.format ? `image/${photo.format}` : "image/jpeg" };
   }
 }
+
+

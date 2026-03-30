@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@capacitor/android':
         specifier: ^8.0.0
-        version: 8.0.1(@capacitor/core@8.1.0)
+        version: 8.0.1(@capacitor/core@8.3.0)
       firebase:
         specifier: ^12.8.0
         version: 12.8.0
@@ -585,26 +585,26 @@ importers:
   apps/lab08-ai:
     dependencies:
       '@capacitor/android':
-        specifier: 8.1.0
-        version: 8.1.0(@capacitor/core@8.1.0)
+        specifier: 8.3.0
+        version: 8.3.0(@capacitor/core@8.3.0)
       '@capacitor/app':
-        specifier: 8.0.1
-        version: 8.0.1(@capacitor/core@8.1.0)
+        specifier: 8.1.0
+        version: 8.1.0(@capacitor/core@8.3.0)
       '@capacitor/camera':
         specifier: ^8.0.0
-        version: 8.0.0(@capacitor/core@8.1.0)
+        version: 8.0.0(@capacitor/core@8.3.0)
       '@capacitor/core':
-        specifier: 8.1.0
-        version: 8.1.0
+        specifier: 8.3.0
+        version: 8.3.0
       '@capacitor/haptics':
-        specifier: 8.0.0
-        version: 8.0.0(@capacitor/core@8.1.0)
+        specifier: 8.0.2
+        version: 8.0.2(@capacitor/core@8.3.0)
       '@capacitor/keyboard':
-        specifier: 8.0.0
-        version: 8.0.0(@capacitor/core@8.1.0)
+        specifier: 8.0.2
+        version: 8.0.2(@capacitor/core@8.3.0)
       '@capacitor/status-bar':
-        specifier: 8.0.1
-        version: 8.0.1(@capacitor/core@8.1.0)
+        specifier: 8.0.2
+        version: 8.0.2(@capacitor/core@8.3.0)
       '@ionic/vue':
         specifier: ^8.0.0
         version: 8.7.17(@stencil/core@4.41.1)(vue-router@4.6.4(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))
@@ -625,8 +625,8 @@ importers:
         version: 4.6.4(vue@3.5.26(typescript@5.9.3))
     devDependencies:
       '@capacitor/cli':
-        specifier: 8.1.0
-        version: 8.1.0
+        specifier: 8.3.0
+        version: 8.3.0
       '@vitejs/plugin-legacy':
         specifier: ^5.0.0
         version: 5.4.3(terser@5.44.1)(vite@5.4.21(@types/node@25.0.8)(terser@5.44.1))
@@ -1293,6 +1293,11 @@ packages:
     peerDependencies:
       '@capacitor/core': ^8.1.0
 
+  '@capacitor/android@8.3.0':
+    resolution: {integrity: sha512-EQy6ByUuKayQBJmMm/e0byJiHavqsQHrvW23BuT2GNVQvenAvipqwaePiJHzrv2PZr7A0T0+se4kgDCeROj0mQ==}
+    peerDependencies:
+      '@capacitor/core': ^8.3.0
+
   '@capacitor/app@7.1.0':
     resolution: {integrity: sha512-W7m09IWrUjZbo7AKeq+rc/KyucxrJekTBg0l4QCm/yDtCejE3hebxp/W2esU26KKCzMc7H3ClkUw32E9lZkwRA==}
     peerDependencies:
@@ -1305,6 +1310,11 @@ packages:
 
   '@capacitor/app@8.0.1':
     resolution: {integrity: sha512-yeG3yyA0ETKqvgqexwHMBlmVOF13A1hRXzv/km0Ptv5TrNIZvZJK4MTI3uiqvnbHrzoJGP5DwWAjEXEfi90v3Q==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
+  '@capacitor/app@8.1.0':
+    resolution: {integrity: sha512-MlmttTOWHDedr/G4SrhNRxsXMqY+R75S4MM4eIgzsgCzOYhb/MpCkA5Q3nuOCfL1oHm26xjUzqZ5aupbOwdfYg==}
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
 
@@ -1333,6 +1343,11 @@ packages:
     engines: {node: '>=22.0.0'}
     hasBin: true
 
+  '@capacitor/cli@8.3.0':
+    resolution: {integrity: sha512-n3QDUimtFNbagoo8kLdjvTz3i3Y4jX1fOjvo6ptUKLzErmuqeamL8kECASoyQvg/OzJisZToGZrgLphBsptJcw==}
+    engines: {node: '>=22.0.0'}
+    hasBin: true
+
   '@capacitor/core@7.4.4':
     resolution: {integrity: sha512-xzjxpr+d2zwTpCaN0k+C6wKSZzWFAb9OVEUtmO72ihjr/NEDoLvsGl4WLfjWPcCO2zOy0b2X52tfRWjECFUjtw==}
 
@@ -1344,6 +1359,9 @@ packages:
 
   '@capacitor/core@8.1.0':
     resolution: {integrity: sha512-UfMBMWc1v7J+14AhH03QmeNwV3HZx3qnOWhpwnHfzALEwAwlV/itQOQqcasMQYhOHWL0tiymc5ByaLTn7KKQxw==}
+
+  '@capacitor/core@8.3.0':
+    resolution: {integrity: sha512-S4ajn4G/fS3VJj8salxqH/3LO5PPWv1VxGKQ27OCajnDcLJjEg9VXwgMPnlypgkIOqCJ2fmQLtk8GT+BlI9/rw==}
 
   '@capacitor/filesystem@8.0.0':
     resolution: {integrity: sha512-RRGNLW9xEqvVVHGyGlfS4Oy0R3Na+bEefwZElKbex22S9eZr5cg8wc750BPPVwbcv5lf5fJymkY8x8y6UwKPyg==}
@@ -1360,6 +1378,11 @@ packages:
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
 
+  '@capacitor/haptics@8.0.2':
+    resolution: {integrity: sha512-c2hZzRR5Fk1tbTvhG1jhh2XBAf3EhnIerMIb2sl7Mt41Gxx1fhBJFDa0/BI1IbY4loVepyyuqNC9820/GZuoWQ==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
   '@capacitor/keyboard@7.0.3':
     resolution: {integrity: sha512-BIBKjmky5rOYNhvYhNeDi0MMvjwYZ6YF9JoCYcGKvKY+XLJKtezsEL78XfOlgWZBkbfR8uq3tzktY6PqgoYLKA==}
     peerDependencies:
@@ -1367,6 +1390,11 @@ packages:
 
   '@capacitor/keyboard@8.0.0':
     resolution: {integrity: sha512-ycPW6iQyFwzDK95jihesj5EGiyyGSfbBqNek11iNp9tBOB7zDeYkUA2S/vPpOETt3dhP6pWr7a9gNVGuEfj11g==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
+  '@capacitor/keyboard@8.0.2':
+    resolution: {integrity: sha512-he6xKmTBp5AhVrWJeEi6RYkJ25FjLLdNruBU2wafpITk3Nb7UdzOj96x3K6etFuEj8/rtn9WXBTs1o2XA86A1A==}
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
 
@@ -1392,6 +1420,11 @@ packages:
 
   '@capacitor/status-bar@8.0.1':
     resolution: {integrity: sha512-OR59dlbwvmrV5dKsC9lvwv48QaGbqcbSTBpk+9/WXWxXYSdXXdzJZU9p8oyNPAkuJhCdnSa3XmU43fZRPBJJ5w==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
+  '@capacitor/status-bar@8.0.2':
+    resolution: {integrity: sha512-WXs8YB8B9eEaPZz+bcdY6t2nForF1FLoj/JU0Dl9RRgQnddnS98FEEyDooQhaY7wivr000j4+SC1FyeJkrFO7A==}
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
 
@@ -2553,6 +2586,7 @@ packages:
   '@xmldom/xmldom@0.8.11':
     resolution: {integrity: sha512-cQzWCtO6C8TQiYl1ruKNn2U6Ao4o4WBBcbL61yJl84x+j5sOWWFU9X7DpND8XZG3daDppSsigMdfAIl2upQBRw==}
     engines: {node: '>=10.0.0'}
+    deprecated: this version has critical issues, please update to the latest version
 
   abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
@@ -5696,9 +5730,9 @@ snapshots:
     dependencies:
       '@capacitor/core': 8.0.0
 
-  '@capacitor/android@8.0.1(@capacitor/core@8.1.0)':
+  '@capacitor/android@8.0.1(@capacitor/core@8.3.0)':
     dependencies:
-      '@capacitor/core': 8.1.0
+      '@capacitor/core': 8.3.0
 
   '@capacitor/android@8.0.2(@capacitor/core@8.0.2)':
     dependencies:
@@ -5707,6 +5741,10 @@ snapshots:
   '@capacitor/android@8.1.0(@capacitor/core@8.1.0)':
     dependencies:
       '@capacitor/core': 8.1.0
+
+  '@capacitor/android@8.3.0(@capacitor/core@8.3.0)':
+    dependencies:
+      '@capacitor/core': 8.3.0
 
   '@capacitor/app@7.1.0(@capacitor/core@7.4.4)':
     dependencies:
@@ -5724,6 +5762,10 @@ snapshots:
     dependencies:
       '@capacitor/core': 8.1.0
 
+  '@capacitor/app@8.1.0(@capacitor/core@8.3.0)':
+    dependencies:
+      '@capacitor/core': 8.3.0
+
   '@capacitor/camera@8.0.0(@capacitor/core@8.0.0)':
     dependencies:
       '@capacitor/core': 8.0.0
@@ -5732,9 +5774,9 @@ snapshots:
     dependencies:
       '@capacitor/core': 8.0.2
 
-  '@capacitor/camera@8.0.0(@capacitor/core@8.1.0)':
+  '@capacitor/camera@8.0.0(@capacitor/core@8.3.0)':
     dependencies:
-      '@capacitor/core': 8.1.0
+      '@capacitor/core': 8.3.0
 
   '@capacitor/cli@7.4.4':
     dependencies:
@@ -5824,6 +5866,28 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@capacitor/cli@8.3.0':
+    dependencies:
+      '@ionic/cli-framework-output': 2.2.8
+      '@ionic/utils-subprocess': 3.0.1
+      '@ionic/utils-terminal': 2.3.5
+      commander: 12.1.0
+      debug: 4.4.3(supports-color@8.1.1)
+      env-paths: 2.2.1
+      fs-extra: 11.3.3
+      kleur: 4.1.5
+      native-run: 2.0.3
+      open: 8.4.2
+      plist: 3.1.0
+      prompts: 2.4.2
+      rimraf: 6.1.2
+      semver: 7.7.3
+      tar: 7.5.7
+      tslib: 2.8.1
+      xml2js: 0.6.2
+    transitivePeerDependencies:
+      - supports-color
+
   '@capacitor/core@7.4.4':
     dependencies:
       tslib: 2.8.1
@@ -5837,6 +5901,10 @@ snapshots:
       tslib: 2.8.1
 
   '@capacitor/core@8.1.0':
+    dependencies:
+      tslib: 2.8.1
+
+  '@capacitor/core@8.3.0':
     dependencies:
       tslib: 2.8.1
 
@@ -5866,6 +5934,10 @@ snapshots:
     dependencies:
       '@capacitor/core': 8.1.0
 
+  '@capacitor/haptics@8.0.2(@capacitor/core@8.3.0)':
+    dependencies:
+      '@capacitor/core': 8.3.0
+
   '@capacitor/keyboard@7.0.3(@capacitor/core@7.4.4)':
     dependencies:
       '@capacitor/core': 7.4.4
@@ -5881,6 +5953,10 @@ snapshots:
   '@capacitor/keyboard@8.0.0(@capacitor/core@8.1.0)':
     dependencies:
       '@capacitor/core': 8.1.0
+
+  '@capacitor/keyboard@8.0.2(@capacitor/core@8.3.0)':
+    dependencies:
+      '@capacitor/core': 8.3.0
 
   '@capacitor/motion@8.0.0(@capacitor/core@8.1.0)':
     dependencies:
@@ -5909,6 +5985,10 @@ snapshots:
   '@capacitor/status-bar@8.0.1(@capacitor/core@8.1.0)':
     dependencies:
       '@capacitor/core': 8.1.0
+
+  '@capacitor/status-bar@8.0.2(@capacitor/core@8.3.0)':
+    dependencies:
+      '@capacitor/core': 8.3.0
 
   '@capacitor/synapse@1.0.4': {}
 
